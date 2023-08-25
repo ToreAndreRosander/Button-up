@@ -1,8 +1,8 @@
-document.getElementById('animateBtn').addEventListener('click', function() {
-    const text = document.querySelector('.text');
-    const truck = document.querySelector('.truck');
-    const road = document.querySelector('.road');
-    const newText = document.querySelector('.newText');
+document.querySelector('.shipping-btn').addEventListener('click', function() {
+    const text = document.querySelector('.shipping-text');
+    const truck = document.querySelector('.shipping-truck');
+    const road = document.querySelector('.shipping-road');
+    const newText = document.querySelector('.shipping-newText');
 
     // Fade out text
     text.style.opacity = '0';
@@ -15,8 +15,7 @@ document.getElementById('animateBtn').addEventListener('click', function() {
 });
 
 // Listen for the end of the transition on the truck or road
-document.querySelector('.truck').addEventListener('transitionend', function() {
-    const newText = document.querySelector('.newText');
+document.querySelector('.shipping-truck').addEventListener('transitionend', function() {
+    const newText = document.querySelector('.shipping-newText');
     newText.style.opacity = '1';
 });
-
