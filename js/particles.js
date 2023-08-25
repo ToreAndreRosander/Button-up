@@ -1,10 +1,12 @@
+// Not implemented yet
+
 const img = new Image();
 img.src = './media/portrait3.png';
 
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 const particles = [];
-const particleCount = 100; // Number of particles
+const particleCount = 100;
 
 canvas.width = 200;
 canvas.height = 100;
@@ -36,9 +38,8 @@ class Particle {
 
 function createParticles() {
     const scale = 1;
-    const translateX = 50; // The amount the image moves on hover
+    const translateX = 50;
 
-    // Draw the image onto the canvas considering the hover transformation
     ctx.drawImage(img, translateX, 0, canvas.width * scale, canvas.height * scale);
 
     const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
@@ -51,15 +52,13 @@ function createParticles() {
             const b = data[i + 2];
             const a = data[i + 3];
 
-            if (a >= 125) { // Only consider non-transparent pixels
+            if (a >= 125) {
                 const pixelColor = `rgba(${r},${g},${b},${a})`;
                 particles.push(new Particle(x, y, pixelColor));
             }
         }
     }
 }
-
-
 
 function handleParticles() {
     for (let i = 0; i < particles.length; i++) {
@@ -72,6 +71,7 @@ function handleParticles() {
         }
     }
 }
+
 document.querySelector('.portfolio-button').addEventListener('click', function() {
     this.classList.add('image-hidden');
     createParticles();
@@ -83,6 +83,5 @@ function animate() {
     handleParticles();
     requestAnimationFrame(animate);
 }
-
 
 animate();
