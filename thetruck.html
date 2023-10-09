@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShipIT</title>
+    <link rel="stylesheet" href="./styles/truck.css">
+</head>
+<body>
+
+    <img src="./media/thepackage.png" alt="Package" class="package-icon">
+
+    <div class="order-confirmation">
+        <h2>Order Confirmation</h2>
+        <p id="orderText">Please confirm your order.</p>
+        <button class="ship-btn" onclick="animatePackage()">Ship it</button>
+    </div>
+
+    <div class="order-success">
+        <h2>Order Success</h2>
+        <p id="successText">Your order has been shipped!</p>
+        <button class="close-btn" onclick="location.reload()">Close</button>
+    </div>
+
+    <img src="./media/thetruck.png" alt="Truck" class="truck-icon">
+    <img src="./media/city-bg.jpg" alt="Road" class="city-bg">
+
+    <script src="./js/truck.js"></script>
+</body>
+</html>
